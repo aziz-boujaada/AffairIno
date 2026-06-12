@@ -10,6 +10,7 @@ const links = [
   { name: "Expertise", href: "#expertise" },
   { name: "Méthodologie", href: "#methodology" },
   { name: "Vision", href: "#vision" },
+  { name: "Événements", href: "#events" },
   { name: "Contact", href: "#contact" },
 ];
 

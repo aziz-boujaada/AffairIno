@@ -16,6 +16,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { InteractiveAura } from "./components/InteractiveAura";
+import {EventsGallery} from "./components/Events"
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
           <Methodology />
           <TargetAudience />
           <Vision />
+          <EventsGallery />
           <CTA />
           <Contact />
         </main>
