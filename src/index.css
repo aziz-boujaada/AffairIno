@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-dark: var(--accent-dark);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  
+  --animate-blob: blob 7s infinite;
+  --animate-gradient: gradient 15s ease infinite;
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+@layer base {
+  :root {
+    --primary: #05070A;
+    --secondary: #ffffff;
+    --accent: #3b82f6; 
+    --accent-light: #60a5fa; 
+    --accent-dark: #2563eb; 
+
+    --background: #ffffff;
+    --foreground: #05070A;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --card: #ffffff;
+    --card-foreground: #05070A;
+    --border: #e2e8f0;
+
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --gradient-from: #ffffff;
+    --gradient-via: #f1f5f9;
+    --gradient-to: #ffffff;
+  }
+
+  .dark {
+    --primary: #ffffff;
+    --secondary: #05070A;
+    --accent: #3b82f6; 
+    --accent-light: #60a5fa; 
+    --accent-dark: #2563eb; 
+
+    --background: #05070A;
+    --foreground: #F8FAFC;
+    --muted: rgba(255, 255, 255, 0.05); /* white/5 */
+    --muted-foreground: #94a3b8; /* slate-400 */
+    --card: rgba(255, 255, 255, 0.02);
+    --card-foreground: #F8FAFC;
+    --border: rgba(255, 255, 255, 0.1); /* white/10 */
+
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --gradient-from: #05070A;
+    --gradient-via: rgba(255, 255, 255, 0.05);
+    --gradient-to: #05070A;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased transition-colors duration-300;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background-color: var(--glass-bg);
+    border-color: var(--glass-border);
+    @apply backdrop-blur-md border;
+  }
+  .glass-card {
+    background-color: var(--glass-bg);
+    border-color: var(--glass-border);
+    @apply backdrop-blur-md border shadow-xl transition-colors;
+  }
+  .glass-card:hover {
+    background-color: var(--muted);
+  }
+  .text-gradient {
+    @apply text-accent bg-none;
+  }
+  .bg-gradient-premium {
+    background-image: linear-gradient(to bottom right, var(--gradient-from), var(--gradient-via), var(--gradient-to));
+  }
+}
