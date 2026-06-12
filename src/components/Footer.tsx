@@ -6,7 +6,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <a href="#home" className="inline-block mb-6 group">
               <div 
-                className="h-10 w-48 bg-accent group-hover:bg-accent-dark transition-colors"
+                className="h-10 w-48 bg-accent group-hover:bg-accent-dark transition-colors drop-shadow-none group-hover:drop-shadow-[0_0_12px_rgba(37,99,235,0.6)]"
                 style={{
                   maskImage: "url('https://res.cloudinary.com/dzketg5uv/image/upload/f_auto,q_auto/AFFAIRINO_LOGO_pgvlii')",
                   maskSize: "contain",

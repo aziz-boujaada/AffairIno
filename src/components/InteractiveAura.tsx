@@ -66,14 +66,14 @@ export function InteractiveAura() {
 
   return (
     <div 
-      className="fixed inset-0 z-50 pointer-events-none overflow-hidden mix-blend-multiply dark:mix-blend-screen"
+      className="fixed inset-0 z-50 pointer-events-none overflow-hidden"
     >
       <motion.div style={{ opacity }} className="absolute inset-0 transition-opacity duration-1000">
         {/* Outer Smoke - Deep Blue */}
         <motion.div
           className="absolute w-[800px] h-[800px] rounded-full blur-[100px] opacity-30 dark:opacity-30"
           style={{
-            background: "radial-gradient(circle, rgba(20, 135, 243, 0.4) 0%, rgba(37,99,235,0) 70%)",
+            background: "radial-gradient(circle, rgba(37,99,235,0.4) 0%, rgba(37,99,235,0) 70%)",
             x: outerX,
             y: outerY,
             translateX: "-50%",
@@ -85,7 +85,7 @@ export function InteractiveAura() {
         <motion.div
           className="absolute w-[500px] h-[500px] rounded-full blur-[80px] opacity-40 dark:opacity-50"
           style={{
-            background: "radial-gradient(circle, rgba(11, 139, 243, 0.5) 0%, rgba(59,130,246,0) 70%)",
+            background: "radial-gradient(circle, rgba(59,130,246,0.5) 0%, rgba(59,130,246,0) 70%)",
             x: midX,
             y: midY,
             translateX: "-50%",
@@ -97,7 +97,7 @@ export function InteractiveAura() {
         <motion.div
           className="absolute w-[300px] h-[300px] rounded-full blur-[60px] opacity-50 dark:opacity-70"
           style={{
-            background: "radial-gradient(circle, rgba(9, 136, 209, 0.6) 0%, rgba(34,211,238,0) 70%)",
+            background: "radial-gradient(circle, rgba(34,211,238,0.6) 0%, rgba(34,211,238,0) 70%)",
             x: coreX,
             y: coreY,
             translateX: "-50%",
