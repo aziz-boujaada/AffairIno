@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ThemeProvider } from "./components/ThemeProvider";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -18,7 +17,7 @@ import { InteractiveAura } from "./components/InteractiveAura";
 
 export default function App() {
   return (
-    <ThemeProvider defaultTheme="light">
+    <>
       <ScrollProgress />
       <InteractiveAura />
       <div className="min-h-screen bg-background font-sans selection:bg-accent/30 selection:text-foreground">
@@ -34,6 +33,6 @@ export default function App() {
         </main>
         <Footer />
       </div>
-    </ThemeProvider>
+   </>
   );
 }

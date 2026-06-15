@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "../lib/utils";
-import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { name: "Accueil", href: "#home" },
@@ -68,7 +67,7 @@ export function Navbar() {
 
         {/* CTA & THEME */}
         <div className="hidden lg:flex items-center gap-4">
-          <ThemeToggle />
+          
           <a
             href="#contact"
             className="bg-accent-dark hover:bg-accent text-white px-6 py-2.5 rounded-full text-xs font-bold transition-all shadow-lg hover:shadow-accent-dark/20"
@@ -78,11 +77,9 @@ export function Navbar() {
         </div>
 
         {/* MOBILE TOGGLE */}
-        <div className="flex lg:flex hidden items-center gap-4">
-          {/* We want mobile toggle visible, lg hidden */}
-        </div>
+       
         <div className="flex lg:hidden items-center gap-2">
-          <ThemeToggle />
+          
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="text-foreground focus:outline-none p-2 glass rounded-full"

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-
+import AffairInoIcon from "../assets/affiar-icon.png"
 export function About() {
   const points = [
     "Stratégie Executive",
@@ -27,7 +27,18 @@ export function About() {
               L'Influence redéfinie.
             </h3>
             <p className="text-base text-foreground/90 font-medium mb-4 leading-relaxed">
-              AFFAIRINO accompagne les leaders dans la construction d'une image puissante.
+              
+              <span className="inline-flex items-center justify-center  text-accent-light">
+                  
+                  <span className="w-5 h-5 md:w-8 md:h-8 flex-shrink-0">
+                    <img
+                      src={AffairInoIcon}
+                      alt="AffairIno"
+                      className="w-full h-full object-contain"
+                      />
+                  </span>
+                      FFAIRINO accompagne les leaders dans la construction d'une image puissante.
+                </span>
             </p>
             <p className="text-sm text-muted-foreground mb-8 leading-relaxed font-light">
               Notre expertise allie stratégie et intelligence artificielle pour un impact durable.

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ReelModal } from "./ReelVedioModal";
 
 import vedio from "../assets/affairino-vedio.mp4"
+import AffairInoIcon from "../assets/affiar-icon.png";
 export function Highlights() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
@@ -14,7 +15,18 @@ export function Highlights() {
           <div className="max-w-2xl">
             <h2 className="text-xs font-bold tracking-widest text-accent uppercase mb-3">Highlights</h2>
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
-              L'art de marquer les esprits
+              <span className="inline-flex items-center justify-center  ">
+                   L' 
+                  <span className="w-5 h-5 md:w-8 md:h-8 flex-shrink-0">
+                    <img
+                      src={AffairInoIcon}
+                      alt="AffairIno"
+                      className="w-full h-full object-contain"
+                      />
+                  </span>
+                    rt de marquer les esprits
+                </span>
+              
             </h3>
           </div>
           <p className="text-sm md:text-base text-muted-foreground font-light max-w-md pb-2">
