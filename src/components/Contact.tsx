@@ -42,7 +42,7 @@ export function Contact() {
               </div>
               <div>
                 <h4 className="text-base font-bold mb-1">Téléphone</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">+212 (0) 5XX XX XX XX</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">+212 663-222165</p>
               </div>
             </div>
 
@@ -52,7 +52,7 @@ export function Contact() {
               </div>
               <div>
                 <h4 className="text-base font-bold mb-1">Email</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">contact@affairino.com</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">contact@affairino.ma</p>
               </div>
             </div>
             
