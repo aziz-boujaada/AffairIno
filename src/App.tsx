@@ -15,6 +15,7 @@ import { Footer } from "./components/Footer";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { InteractiveAura } from "./components/InteractiveAura";
 import Partners from "./components/Paretners";
+import PolesSection from "./components/Pole";
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
           <Methodology />
           <Vision />
           <Highlights />
+          <PolesSection />
           <Partners />
           <Contact />
         </main>
