@@ -162,7 +162,7 @@ function ScrollAurora() {
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 pointer-events-none overflow-hidden"
+      className="fixed inset-0 z-999 pointer-events-none overflow-hidden"
       style={{ opacity }}
     >
       <motion.div
@@ -274,7 +274,7 @@ function ParticleNetwork({ isMobile = false }: ParticleNetworkProps) {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full"
+      className="absolute inset-0  w-full h-full"
     />
   );
 }

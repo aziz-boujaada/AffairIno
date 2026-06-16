@@ -28,7 +28,7 @@ export function About() {
             </h3>
             <p className="text-base text-foreground/90 font-medium mb-4 leading-relaxed">
               
-              <span className="inline-flex items-center justify-center  text-accent-light">
+              <span className="inline-flex items-start justify-center  text-accent-light">
                   
                   <span className="w-5 h-5 md:w-8 md:h-8 flex-shrink-0">
                     <img

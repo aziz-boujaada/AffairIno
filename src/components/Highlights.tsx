@@ -11,11 +11,11 @@ export function Highlights() {
   return (
     <section id="highlights" className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div className="max-w-2xl">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
+          <div className="">
             <h2 className="text-xs font-bold tracking-widest text-accent uppercase mb-3">Highlights</h2>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
-              <span className="inline-flex items-center justify-center  ">
+            <h3 className="text-2xl md:text-3xl text-center lg:text-5xl font-black tracking-tight leading-tight">
+              <span className="inline-flex items-start lg:items-center justify-center  ">
                    L' 
                   <span className="w-5 h-5 md:w-8 md:h-8 flex-shrink-0">
                     <img
