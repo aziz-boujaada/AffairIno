@@ -232,7 +232,7 @@ export default function PolesSection() {
                 {selectedPole.subtitle}
               </p>
             </div>
-
+                      
             {/* SERVICES */}
             <div className="space-y-5">
               {selectedPole.services.map((service, i) => {
