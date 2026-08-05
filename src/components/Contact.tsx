@@ -42,7 +42,7 @@ export function Contact() {
               </div>
               <div>
                 <h4 className="text-base font-bold mb-1">Téléphone</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">+212 663-222165</p>
+                <a href="tel:+212663222165" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm leading-relaxed">+212 663 22 21 65</a>
               </div>
             </div>
 
@@ -52,7 +52,7 @@ export function Contact() {
               </div>
               <div>
                 <h4 className="text-base font-bold mb-1">Email</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">contact@affairino.ma</p>
+                <a href="mailto:Info@affairino.ma" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm leading-relaxed">Info@affairino.ma </a>
               </div>
             </div>
             
@@ -62,7 +62,7 @@ export function Contact() {
               </div>
               <div>
                 <h4 className="text-base font-bold mb-1">LinkedIn</h4>
-                <a href="#" className="text-muted-foreground text-sm hover:text-accent transition-colors leading-relaxed">AFFAIRINO Consulting</a>
+                <a href="https://www.linkedin.com/company/affairino/" target="_blank" rel="noopener noreferrer"  className="text-muted-foreground text-sm hover:text-accent transition-colors leading-relaxed">AFFAIRINO Consulting</a>
               </div>
             </div>
           </motion.div>
@@ -80,16 +80,16 @@ export function Contact() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <label className="text-xs font-semibold text-foreground/80">Prénom</label>
-                  <input type="text" className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-sm" placeholder="Jean" />
+                  <input type="text" className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-sm" placeholder="Votre Prénom" />
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-xs font-semibold text-foreground/80">Nom</label>
-                  <input type="text" className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-sm" placeholder="Dupont" />
+                  <input type="text" className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-sm" placeholder="Votre Nom" />
                 </div>
               </div>
               <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-foreground/80">Email</label>
-                <input type="email" className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-sm" placeholder="jean.dupont@entreprise.com" />
+                <input type="email" className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-sm" placeholder="example@example.com " />
               </div>
               <div className="space-y-1.5 flex-1">
                 <label className="text-xs font-semibold text-foreground/80">Message</label>

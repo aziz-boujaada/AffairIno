@@ -29,7 +29,7 @@ export function Expertise() {
       title: "Événementiel",
       description: "Valorisation d'événements exclusifs pour asseoir votre leadership.",
       features: ["Sommets et conventions", "Lancements de prestige", "Relations publiques ciblées"],
-      image: "https://res.cloudinary.com/dzketg5uv/image/upload/f_auto,q_auto/WhatsApp_Image_2026-06-12_at_12.39.19_3_ivxh1j"
+      image: "https://res.cloudinary.com/dzketg5uv/image/upload/v1785941235/copy_of_capture_2026-08-05_15-38-03_ml3jky.png"  
     },
     {
       icon: Briefcase,

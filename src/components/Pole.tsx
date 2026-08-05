@@ -149,22 +149,8 @@ export default function PolesSection() {
       {/* Header */}
       <div className="text-center mb-20">
         <h3 className="text-2xl md:text-5xl font-black text-[#05070A] mt-4">
-          <span>
-            <img
-              src={N}
-              alt=""
-              className="w-12 h-12 md:w-18 md:h-18 inline-flex items-start "
-            />
-            os{" "}
-            <span>
-              <img
-                src={P}
-                alt=""
-                className="w-12 h-12 md:w-18 md:h-18  inline-flex items-start "
-              />
-            </span>
-            ôles Stratégiques
-          </span>
+          Nos <span className="text-blue-500">Pôles</span> Stratégiques 
+
         </h3>
         <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
           Solutions premium pour croissance, image et impact digital.
@@ -229,20 +215,20 @@ export default function PolesSection() {
       {selectedPole && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
           <div
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/90 backdrop-blur-sm"
             onClick={() => setSelectedPole(null)}
           />
 
           <div
             className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto
-            rounded-3xl border border-white/20
+            rounded-3xl border border-white/40
             bg-white/10 backdrop-blur-2xl shadow-2xl p-8"
           >
             <div className="border-b border-white/10 pb-4 mb-6">
-              <h3 className="text-2xl font-black text-[#05070A]">
+              <h3 className="text-2xl font-black text-blue-500">
                 {selectedPole.title}
               </h3>
-              <p className="text-gray-500 text-sm mt-2">
+              <p className="text-white text-sm mt-2">
                 {selectedPole.subtitle}
               </p>
             </div>
@@ -256,7 +242,7 @@ export default function PolesSection() {
                   <div
                     key={i}
                     className="p-5 rounded-2xl
-                    bg-white/20 backdrop-blur-xl
+                    bg-white/60 backdrop-blur-xl
                     border border-white/20
                     hover:border-blue-400 transition"
                   >

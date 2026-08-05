@@ -14,7 +14,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { InteractiveAura } from "./components/InteractiveAura";
-import Partners from "./components/Paretners";
+// import Partners from "./components/Paretners";
 import PolesSection from "./components/Pole";
 
 export default function App() {
@@ -32,7 +32,7 @@ export default function App() {
           <Vision />
           <Highlights />
           <PolesSection />
-          <Partners />
+          {/* <Partners /> */}
           <Contact />
         </main>
         <Footer />

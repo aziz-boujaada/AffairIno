@@ -128,15 +128,7 @@ export function Hero() {
 
             <span className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-accent-light">
               Maîtriser l'Impact
-              
-              {/* Responsive Logo display */}
-              <span className="inline-flex w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 shrink-0">
-                <img
-                  src={AffairInoIcon}
-                  alt="AffairIno"
-                  className="w-full h-full object-contain"
-                />
-              </span>
+               
             </span>
           </motion.h1>
 
