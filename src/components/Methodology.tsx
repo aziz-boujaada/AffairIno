@@ -13,7 +13,7 @@ export function Methodology() {
         "Benchmark concurrentiel",
         "Cartographie des risques",
       ],
-      icon: Search,
+    
     },
     {
       num: "02",
@@ -25,7 +25,7 @@ export function Methodology() {
         "Storytelling institutionnel",
         "Matrice de messages",
       ],
-      icon: Layers3,
+     
     },
     {
       num: "03",
@@ -36,7 +36,7 @@ export function Methodology() {
         "Événements de prestige",
         "Relations presse",
       ],
-      icon: Rocket,
+     
     },
     {
       num: "04",
@@ -47,7 +47,7 @@ export function Methodology() {
         "Ajustement stratégique",
         "Rapports d'impact",
       ],
-      icon: TrendingUp,
+     
     },
   ];
 
@@ -87,7 +87,7 @@ export function Methodology() {
 
           {steps.map((step, idx) => {
             const isEven = idx % 2 === 0;
-            const Icon = step.icon;
+            
 
             return (
               <div
@@ -97,7 +97,7 @@ export function Methodology() {
                 }`}
               >
                 {/* Desktop Node */}
-                <div className="hidden md:flex absolute left-1/2 w-25 h-14 rounded-full border-4 border-background bg-accent text-white items-center justify-center z-20 -translate-x-1/2 shadow-lg">
+                <div className="hidden md:flex  absolute left-1/2 w-25 h-14 rounded-full border-4 border-background bg-accent text-white items-center justify-center z-20 -translate-x-1/2 shadow-lg">
                   <div className="flex items-center gap-2">
                     <span className="text-[15px] font-bold ml-2">
                       {step.num}
@@ -121,7 +121,7 @@ export function Methodology() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6 }}
-                  className={`w-full md:w-1/2 mb-6 md:mb-0 flex flex-col ${
+                  className={`w-full md:w-1/2 mb-6 md:mb-0 flex flex-col justify-around  ${
                     isEven
                       ? "md:pr-16 text-left md:text-right md:items-end"
                       : "md:pl-16 text-left md:items-start"
@@ -180,16 +180,7 @@ export function Methodology() {
                     isEven ? "md:pl-16" : "md:pr-16"
                   }`}
                 >
-                  <div className="relative flex items-center justify-center aspect-[4/3] rounded-3xl overflow-hidden border border-border/50 bg-background/50 backdrop-blur-xl shadow-xl group">
-                    {/* Glow */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-accent/5 to-purple-500/10 opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-
-                    <div className="absolute w-40 h-40 rounded-full bg-accent/10 blur-3xl" />
-
-                    <div className="relative z-10 flex items-center justify-center w-28 h-28 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-lg group-hover:scale-110 transition-transform duration-500">
-                      <Icon className="w-14 h-14 text-accent" />
-                    </div>
-                  </div>
+               
                 </motion.div>
               </div>
             );

@@ -1,8 +1,54 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 
 export function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: ''
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+    
+      const response = await fetch(`/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus('success');
+        setFormData({ firstName: '', lastName: '', email: '', message: '' }); // Reset form
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+        setErrorMessage(data.message || 'Failed to send message.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setStatus('error');
+      setErrorMessage("Une erreur réseau est survenue. Veuillez réessayer plus tard. Vous pouvez également nous contacter à l'adresse suivante : Info@affairino.ma");
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-muted/30 border-t border-border">
       <div className="container mx-auto px-6 md:px-12">
@@ -76,27 +122,40 @@ export function Contact() {
             className="glass-card p-8 rounded-2xl flex flex-col justify-center bg-card/60"
           >
             <h4 className="text-xl font-bold mb-6">Envoyez-nous un message</h4>
-            <form className="space-y-4 flex flex-col flex-1" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4 flex flex-col flex-1" onSubmit={handleSubmit}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <label className="text-xs font-semibold text-foreground/80">Prénom</label>
-                  <input type="text" className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-sm" placeholder="Votre Prénom" />
+                  <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-sm" placeholder="Votre Prénom" />
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-xs font-semibold text-foreground/80">Nom</label>
-                  <input type="text" className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-sm" placeholder="Votre Nom" />
+                  <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-sm" placeholder="Votre Nom" />
                 </div>
               </div>
               <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-foreground/80">Email</label>
-                <input type="email" className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-sm" placeholder="example@example.com " />
+                <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-sm" placeholder="example@example.com " />
               </div>
               <div className="space-y-1.5 flex-1">
                 <label className="text-xs font-semibold text-foreground/80">Message</label>
-                <textarea rows={4} className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all resize-none text-sm" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+                <textarea rows={4} name="message" value={formData.message} onChange={handleChange} required className="w-full px-3 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all resize-none text-sm" placeholder="Comment pouvons-nous vous aider ?"></textarea>
               </div>
-              <button className="w-full py-3.5 bg-accent text-white text-sm font-bold rounded-lg hover:bg-accent-dark transition-all shadow-lg hover:shadow-accent/40 mt-2">
-                Envoyer la demande
+
+              {status === 'success' && (
+                <div className="p-3 text-sm text-green-600 bg-green-50 rounded-lg border border-green-200">
+                  Votre message a été envoyé avec succès !
+                </div>
+              )}
+              
+              {status === 'error' && (
+                <div className="p-3 text-sm text-red-600 bg-red-50 rounded-lg border border-red-200">
+                  {errorMessage}
+                </div>
+              )}
+
+              <button type="submit" disabled={status === 'loading'} className="w-full py-3.5 bg-accent text-white text-sm font-bold rounded-lg hover:bg-accent-dark transition-all shadow-lg hover:shadow-accent/40 mt-2 disabled:opacity-70 disabled:cursor-not-allowed">
+                {status === 'loading' ? 'Envoi en cours...' : 'Envoyer la demande'}
               </button>
             </form>
           </motion.div>
