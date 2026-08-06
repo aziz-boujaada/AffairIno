@@ -23,7 +23,7 @@ export function Contact() {
     setErrorMessage('');
 
     try {
-    
+
       const response = await fetch(`/api/contact`, {
         method: 'POST',
         headers: {
@@ -81,35 +81,44 @@ export function Contact() {
                 </p>
               </div>
             </div>
-
-            <div className="glass-card p-6 rounded-2xl flex items-start gap-4 group hover:border-accent/40 transition-colors">
-              <div className="w-10 h-10 rounded-full glass flex items-center justify-center shrink-0 text-accent">
-                <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
-              </div>
-              <div>
-                <h4 className="text-base font-bold mb-1">Téléphone</h4>
-                <a href="tel:+212663222165" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm leading-relaxed">+212 663 22 21 65</a>
-              </div>
+            <div>
+              <a href="tel:+212663222165" target="_blank" rel="noopener noreferrer">
+                <div className="glass-card p-6 rounded-2xl flex items-start gap-4 group hover:border-accent/40 transition-colors">
+                  <div className="w-10 h-10 rounded-full glass flex items-center justify-center shrink-0 text-accent">
+                    <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  </div>
+                  <div>
+                    <h4 className="text-base font-bold mb-1">Téléphone</h4>
+                    <h5 className="text-muted-foreground text-sm leading-relaxed">+212 663 22 21 65</h5>
+                  </div>
+                </div>
+              </a>
             </div>
-
-            <div className="glass-card p-6 rounded-2xl flex items-start gap-4 group hover:border-accent/40 transition-colors">
-              <div className="w-10 h-10 rounded-full glass flex items-center justify-center shrink-0 text-accent">
-                <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-              </div>
-              <div>
-                <h4 className="text-base font-bold mb-1">Email</h4>
-                <a href="mailto:Info@affairino.ma" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm leading-relaxed">Info@affairino.ma </a>
-              </div>
+            <div>
+              <a href="mailto:Info@affairino.ma" target="_blank" rel="noopener noreferrer" >
+                <div className="glass-card p-6 rounded-2xl flex items-start gap-4 group hover:border-accent/40 transition-colors">
+                  <div className="w-10 h-10 rounded-full glass flex items-center justify-center shrink-0 text-accent">
+                    <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  </div>
+                  <div>
+                    <h4 className="text-base font-bold mb-1">Email</h4>
+                    <h5 className="text-muted-foreground text-sm leading-relaxed">Info@affairino.ma </h5>
+                  </div>
+                </div>
+              </a>
             </div>
-            
-            <div className="glass-card p-6 rounded-2xl flex items-start gap-4 group hover:border-accent/40 transition-colors">
-              <div className="w-10 h-10 rounded-full glass flex items-center justify-center shrink-0 text-accent">
-                <FaLinkedin className="w-4 h-4 group-hover:scale-110 transition-transform" />
-              </div>
-              <div>
-                <h4 className="text-base font-bold mb-1">LinkedIn</h4>
-                <a href="https://www.linkedin.com/company/affairino/" target="_blank" rel="noopener noreferrer"  className="text-muted-foreground text-sm hover:text-accent transition-colors leading-relaxed">AFFAIRINO Consulting</a>
-              </div>
+            <div>
+              <a href="https://www.linkedin.com/company/affairino/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-accent transition-colors leading-relaxed">
+                <div className="glass-card p-6 rounded-2xl flex items-start gap-4 group hover:border-accent/40 transition-colors">
+                  <div className="w-10 h-10 rounded-full glass flex items-center justify-center shrink-0 text-accent">
+                    <FaLinkedin className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  </div>
+                  <div>
+                    <h4 className="text-base font-bold mb-1">LinkedIn</h4>
+                    <h5 className="text-muted-foreground text-sm hover:text-accent transition-colors leading-relaxed">AFFAIRINO  </h5>
+                  </div>
+                </div>
+              </a>
             </div>
           </motion.div>
 
@@ -147,7 +156,7 @@ export function Contact() {
                   Votre message a été envoyé avec succès !
                 </div>
               )}
-              
+
               {status === 'error' && (
                 <div className="p-3 text-sm text-red-600 bg-red-50 rounded-lg border border-red-200">
                   {errorMessage}
@@ -161,6 +170,6 @@ export function Contact() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </section >
   );
 }
